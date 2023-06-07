@@ -1,0 +1,288 @@
+{
+	"nodes": [
+		{
+			"active": true,
+			"id": "11f9a7b4-7c09336f",
+			"type": "INPUT"
+		},
+		{
+			"active": true,
+			"id": "fba47e1a-2613e2df",
+			"type": "INPUT"
+		},
+		{
+			"active": true,
+			"id": "a281bee4-b796708e",
+			"type": "INPUT"
+		},
+		{
+			"active": true,
+			"id": "82ca245c-aec2dff5",
+			"type": "INPUT"
+		},
+		{
+			"active": true,
+			"id": "d2944be7-345debb7",
+			"type": "INPUT"
+		},
+		{
+			"active": true,
+			"id": "ac3bd996-1a1b0539",
+			"type": "OUTPUT"
+		},
+		{
+			"active": true,
+			"id": "45e400eb-a5c0baa7",
+			"type": "OUTPUT"
+		},
+		{
+			"active": true,
+			"id": "ed505cc3-ff35aae4",
+			"type": "OUTPUT"
+		},
+		{
+			"active": true,
+			"id": "4aaf8f6e-f4d36ecb",
+			"type": "OUTPUT"
+		},
+		{
+			"active": true,
+			"id": "a88957cf-aae084e3",
+			"type": "HIDDEN"
+		},
+		{
+			"active": true,
+			"id": "f2daa0ad-b549f169",
+			"type": "HIDDEN"
+		},
+		{
+			"active": true,
+			"id": "c0725a18-c11d0f13",
+			"type": "HIDDEN"
+		},
+		{
+			"active": true,
+			"id": "36c4acf8-d950eb44",
+			"type": "HIDDEN"
+		},
+		{
+			"active": true,
+			"id": "90abfe9a-2da9618c",
+			"type": "HIDDEN"
+		}
+	],
+	"carName": "Brams bakkie",
+	"fitness": 12.881885589648698,
+	"connections": [
+		{
+			"inputNode": {
+				"active": true,
+				"id": "d2944be7-345debb7",
+				"type": "INPUT"
+			},
+			"weight": 0.21232349541721973,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ac3bd996-1a1b0539",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "a281bee4-b796708e",
+				"type": "INPUT"
+			},
+			"weight": -0.08680970878592698,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ac3bd996-1a1b0539",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "d2944be7-345debb7",
+				"type": "INPUT"
+			},
+			"weight": 0.42842120020923247,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "a88957cf-aae084e3",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "a88957cf-aae084e3",
+				"type": "HIDDEN"
+			},
+			"weight": -0.018252378308370343,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ac3bd996-1a1b0539",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "fba47e1a-2613e2df",
+				"type": "INPUT"
+			},
+			"weight": -0.9886000655264384,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ed505cc3-ff35aae4",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "a281bee4-b796708e",
+				"type": "INPUT"
+			},
+			"weight": -0.5120102045093171,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "f2daa0ad-b549f169",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "f2daa0ad-b549f169",
+				"type": "HIDDEN"
+			},
+			"weight": 0.6302228723247407,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ac3bd996-1a1b0539",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "a88957cf-aae084e3",
+				"type": "HIDDEN"
+			},
+			"weight": -0.29518290961322835,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "c0725a18-c11d0f13",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "c0725a18-c11d0f13",
+				"type": "HIDDEN"
+			},
+			"weight": 0.2590713626223127,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "ac3bd996-1a1b0539",
+				"type": "OUTPUT"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "fba47e1a-2613e2df",
+				"type": "INPUT"
+			},
+			"weight": -0.5731243198206339,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "f2daa0ad-b549f169",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "a281bee4-b796708e",
+				"type": "INPUT"
+			},
+			"weight": -0.7610432588382432,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "36c4acf8-d950eb44",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "36c4acf8-d950eb44",
+				"type": "HIDDEN"
+			},
+			"weight": 0.6237829745913679,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "f2daa0ad-b549f169",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "36c4acf8-d950eb44",
+				"type": "HIDDEN"
+			},
+			"weight": 0.524852077056913,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "90abfe9a-2da9618c",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "90abfe9a-2da9618c",
+				"type": "HIDDEN"
+			},
+			"weight": 0.5417059287798707,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "f2daa0ad-b549f169",
+				"type": "HIDDEN"
+			}
+		},
+		{
+			"inputNode": {
+				"active": true,
+				"id": "fba47e1a-2613e2df",
+				"type": "INPUT"
+			},
+			"weight": 0.45000201692979047,
+			"active": true,
+			"outputNode": {
+				"active": true,
+				"id": "36c4acf8-d950eb44",
+				"type": "HIDDEN"
+			}
+		}
+	]
+}

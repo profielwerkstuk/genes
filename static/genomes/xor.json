@@ -1,0 +1,130 @@
+{
+	"nodes": [
+		{
+			"type": "INPUT",
+			"id": "1dcbf1ac-c0d941a9",
+			"active": true
+		},
+		{
+			"type": "INPUT",
+			"id": "e83c2a7e-94951d72",
+			"active": true
+		},
+		{
+			"type": "OUTPUT",
+			"id": "0f8bbd04-d3514e9e",
+			"active": true
+		},
+		{
+			"type": "HIDDEN",
+			"id": "e568c4bf-d8225614",
+			"active": true
+		},
+		{
+			"type": "HIDDEN",
+			"id": "672b2416-080344b5",
+			"active": true
+		}
+	],
+	"connections": [
+		{
+			"inputNode": {
+				"type": "INPUT",
+				"id": "e83c2a7e-94951d72",
+				"active": true
+			},
+			"outputNode": {
+				"type": "OUTPUT",
+				"id": "0f8bbd04-d3514e9e",
+				"active": true
+			},
+			"weight": 0.6453245452801171,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "INPUT",
+				"id": "1dcbf1ac-c0d941a9",
+				"active": true
+			},
+			"outputNode": {
+				"type": "OUTPUT",
+				"id": "0f8bbd04-d3514e9e",
+				"active": true
+			},
+			"weight": -0.7086284257490099,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "INPUT",
+				"id": "1dcbf1ac-c0d941a9",
+				"active": true
+			},
+			"outputNode": {
+				"type": "HIDDEN",
+				"id": "e568c4bf-d8225614",
+				"active": true
+			},
+			"weight": 0.8995983895879673,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "HIDDEN",
+				"id": "e568c4bf-d8225614",
+				"active": true
+			},
+			"outputNode": {
+				"type": "OUTPUT",
+				"id": "0f8bbd04-d3514e9e",
+				"active": true
+			},
+			"weight": 0.8918439292540254,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "HIDDEN",
+				"id": "e568c4bf-d8225614",
+				"active": true
+			},
+			"outputNode": {
+				"type": "HIDDEN",
+				"id": "672b2416-080344b5",
+				"active": true
+			},
+			"weight": 0.8818010851288673,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "HIDDEN",
+				"id": "672b2416-080344b5",
+				"active": true
+			},
+			"outputNode": {
+				"type": "OUTPUT",
+				"id": "0f8bbd04-d3514e9e",
+				"active": true
+			},
+			"weight": 0.9823745176949426,
+			"active": true
+		},
+		{
+			"inputNode": {
+				"type": "INPUT",
+				"id": "e83c2a7e-94951d72",
+				"active": true
+			},
+			"outputNode": {
+				"type": "HIDDEN",
+				"id": "e568c4bf-d8225614",
+				"active": true
+			},
+			"weight": -0.9213637303644298,
+			"active": true
+		}
+	],
+	"fitness": 3.518282607587483
+}
