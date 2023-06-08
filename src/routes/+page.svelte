@@ -53,7 +53,7 @@
         onSnapshot(collection(firestore, "genomes"), (doc) => {
             doc.docChanges().forEach(change => {
                 if (change.type === "added") {
-                    const data = change.doc.data().genome;
+                    const data = change.doc.data();
                     data.id = change.doc.id;
                     genomes.push(data);
                 } else if (change.type === "modified") {
