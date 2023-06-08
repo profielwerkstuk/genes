@@ -47,16 +47,22 @@
         fitness: number;
     };
 
-    const genomes: {genome: Genome, uploadDate: Timestamp}[] = []
+    const genomes = []
 
     onMount(async () => {
         onSnapshot(collection(firestore, "genomes"), (doc) => {
             doc.docChanges().forEach(change => {
                 if (change.type === "added") {
-                    genomes.push(change.doc.data().genome);
+                    const data = change.doc.data().genome;
+                    data.id = change.doc.id;
+                    genomes.push(data);
                 } else if (change.type === "modified") {
-                    genomes[genomes.findIndex(v => v.CarInstance.id === change.doc.id)] = change.doc.data() as Genome;
+                    genomes[genomes.findIndex(v => v.id === change.doc.id)] = change.doc.data() as Genome;
+                } else if (change.type === "removed") {
+                    genomes.splice(genomes.findIndex(v => v.id === change.doc.id), 1);
                 }
+
+                console.log(genomes);
             });
         });
 
