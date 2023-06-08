@@ -28,10 +28,10 @@
         projectId: "ai-profielwerkstuk",
         storageBucket: "ai-profielwerkstuk.appspot.com",
         messagingSenderId: "458512798569",
-        appId: "1:458512798569:web:edd96f8243b2c18a54e3f8"
+        appId: "1:458512798569:web:edd96f8243b2c18a54e3f8",
     };
 
-    const app = initializeApp (firebaseConfig);
+    const app = initializeApp(firebaseConfig);
     const firestore = getFirestore(app);
 
     type Node = { type: "INPUT" | "OUTPUT" | "HIDDEN"; id: string; active: boolean };
@@ -45,29 +45,46 @@
         nodes: Node[];
         connections: Connection[];
         fitness: number;
+        id: number;
+        time: {
+            timestamp: {
+                seconds: number;
+                nanoseconds: number;
+            };
+        };
     };
 
-    const genomes = []
+    let genomes: Genome[] = [];
+    let GENOME = genomes[0] as Genome;
 
     onMount(async () => {
-        onSnapshot(collection(firestore, "genomes"), (doc) => {
-            doc.docChanges().forEach(change => {
+        onSnapshot(collection(firestore, "genomes"), (doc: any) => {
+            doc.docChanges().forEach((change: any) => {
                 if (change.type === "added") {
                     const data = change.doc.data();
                     data.id = change.doc.id;
+                    data.time = change.doc._document.createTime;
                     genomes.push(data);
                 } else if (change.type === "modified") {
-                    genomes[genomes.findIndex(v => v.id === change.doc.id)] = change.doc.data() as Genome;
+                    genomes[genomes.findIndex((v) => v.id === change.doc.id)] = change.doc.data() as Genome;
                 } else if (change.type === "removed") {
-                    genomes.splice(genomes.findIndex(v => v.id === change.doc.id), 1);
+                    genomes.splice(
+                        genomes.findIndex((v) => v.id === change.doc.id),
+                        1
+                    );
                 }
-
-                console.log(genomes);
             });
-        });
 
-        const res = await fetch("/genomes/bram.json");
-        let GENOME = (await res.json()) as Genome;
+            genomes = genomes.sort((a, b) => (a.time.timestamp.nanoseconds >= b.time.timestamp.nanoseconds ? 1 : -1));
+            GENOME = genomes[0];
+
+            World.clear(engine.world, false);
+            Engine.clear(engine);
+
+            allBodies = [];
+
+            renderFunction();
+        });
 
         const Engine = Matter.Engine,
             Render = Matter.Render,
@@ -89,6 +106,7 @@
         });
 
         let allBodies: (Body | Constraint)[] = [];
+
         function renderFunction() {
             const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight, window.innerWidth, 50, { isStatic: true });
             const ceiling = Bodies.rectangle(window.innerWidth / 2, 0, window.innerWidth, 50, { isStatic: true });
@@ -153,8 +171,6 @@
             }
             applyRandomForce([...Object.values(nodes)]);
         }
-
-        renderFunction();
 
         addEventListener("keypress", (e) => {
             if (e.key === "l") {
