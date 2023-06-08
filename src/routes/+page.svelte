@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Matter, { Body, Constraint, Common, World } from "matter-js";
+    import { Timestamp, collection, doc, getFirestore, onSnapshot } from "firebase/firestore";
+    import { initializeApp } from "firebase/app";
 
     const SETTINGS = {
         neuronSize: 20,
@@ -20,6 +22,18 @@
         },
     };
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyC556xEWQ6bn9dXxnND7zn22K_YMjqGG5k",
+        authDomain: "ai-profielwerkstuk.firebaseapp.com",
+        projectId: "ai-profielwerkstuk",
+        storageBucket: "ai-profielwerkstuk.appspot.com",
+        messagingSenderId: "458512798569",
+        appId: "1:458512798569:web:edd96f8243b2c18a54e3f8"
+    };
+
+    const app = initializeApp (firebaseConfig);
+    const firestore = getFirestore(app);
+
     type Node = { type: "INPUT" | "OUTPUT" | "HIDDEN"; id: string; active: boolean };
     type Connection = {
         inputNode: Node;
@@ -33,7 +47,19 @@
         fitness: number;
     };
 
+    const genomes: {genome: Genome, uploadDate: Timestamp}[] = []
+
     onMount(async () => {
+        onSnapshot(collection(firestore, "genomes"), (doc) => {
+            doc.docChanges().forEach(change => {
+                if (change.type === "added") {
+                    genomes.push(change.doc.data().genome);
+                } else if (change.type === "modified") {
+                    genomes[genomes.findIndex(v => v.CarInstance.id === change.doc.id)] = change.doc.data() as Genome;
+                }
+            });
+        });
+
         const res = await fetch("/genomes/bram.json");
         let GENOME = (await res.json()) as Genome;
 
